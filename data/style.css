@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('fond.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

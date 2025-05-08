@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CD74 - Voice command config</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="./logo.png" alt="Logo CD74">
+    <h2>Configuration WiFi</h2>
+    <form id="configForm" action="/save" method="POST">
+		<label for="ssid">SSID</label>
+		<input list="ssid_list" name="ssid" id="ssid" placeholder="Choisir ou entrer un SSID (wifi 2.4GHz)">
+			<datalist id="ssid_list">
+			  <!-- options dynamiques -->
+			</datalist>
+
+		<label for="password">Mot de passe</label>
+		<input type="password" name="password" id="password">
+
+		<h2>Configuration Serveur voix</h2>
+		<label for="app_key">App Key</label>
+		<input type="text" name="app_key" id="app_key" placeholder="Copier coller l'application key">
+
+		<label for="app_secret">App Secret</label>
+		<input type="text" name="app_secret" id="app_secret" placeholder="Copier coller l'application secret">
+
+		<label for="device_id">Device ID</label>
+		<input type="text" name="device_id" id="device_id" placeholder="Copier coller le numéro ID">
+
+		<h2>Configuration ID telealarme</h2>
+		<label for="id_watch">Id telealarme</label>
+		<input type="text" name="id_watch" id="id_watch" placeholder="Numero de serie Telealarme">
+
+		<div id="errorMsg" style="color: red; margin-top: 10px;"></div>
+
+		<button type="submit">Valider</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("configForm").addEventListener("submit", function(event) {
+      const ssid = document.getElementById("ssid").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const key = document.getElementById("app_key").value.trim();
+      const secret = document.getElementById("app_secret").value.trim();
+      const device = document.getElementById("device_id").value.trim();
+      const idwatch = document.getElementById("id_watch").value.trim();
+      const errorDiv = document.getElementById("errorMsg");
+
+      if (!ssid || !pass || !key || !secret || !device || !idwatch) {
+        errorDiv.textContent = "Veuillez remplir tous les champs.";
+        event.preventDefault(); // bloque l'envoi du formulaire
+        return false;
+      }
+
+      // Tu peux aussi ajouter ici des vérifications de format si besoin
+
+      errorDiv.textContent = ""; // tout est bon
+      return true;
+    });
+  </script>
+</body>
+</html>
